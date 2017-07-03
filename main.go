@@ -33,6 +33,7 @@ func parseCmdLineArgs() {
 func main() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
 	parseCmdLineArgs()
+	logs.Debugf("The root path is %s", rootPath)
 
 	if configFilePath != "" {
 		settings.ConfigFilePath = configFilePath

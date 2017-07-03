@@ -22,7 +22,7 @@ func (d FSDir) Open(name string) (http.File, error) {
 	}
 	realPath := filepath.Join(dir, filepath.FromSlash(path.Clean("/"+name)))
 	if fileStat, err := os.Stat(realPath); err == nil && !fileStat.IsDir() {
-		f, err := os.Open(filepath.Join(dir, filepath.FromSlash(path.Clean("/"+name))))
+		f, err := os.Open(realPath)
 		if err != nil {
 			return nil, err
 		}
