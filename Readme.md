@@ -1,5 +1,7 @@
 # The simple file server
 
+The new version forbid access dir, and won't list the content of the folder.
+
 This is a simple file server written with golang, which can support port and path parameter.
 
 The default port is 8080
