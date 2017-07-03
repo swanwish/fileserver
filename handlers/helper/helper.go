@@ -7,6 +7,8 @@ import (
 	"path"
 	"path/filepath"
 	"strings"
+
+	"github.com/swanwish/go-common/logs"
 )
 
 type FSDir string
@@ -28,5 +30,6 @@ func (d FSDir) Open(name string) (http.File, error) {
 		}
 		return f, nil
 	}
+	logs.Errorf("The path %s is dir, which is not allowed", realPath)
 	return nil, os.ErrPermission
 }
